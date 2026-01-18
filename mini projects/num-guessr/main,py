@@ -2,6 +2,8 @@
 
 import random as rn
 
+filepath = r"highscore.txt"
+
 num = rn.randint(1, 100)
 guess = 0
 attempts = 0
@@ -48,13 +50,13 @@ while guess != num:
         print(f"Correct. you got it in {attempts}attempts!")
 
 try:
-    with open(r"D:\projects\mini projects\num-guessr\highscore.txt", 'r') as file:
+    with open(filepath, 'r') as file:
         file.read()
 except FileNotFoundError:
-    with open(r"D:\projects\mini projects\num-guessr\highscore.txt", 'w') as file:
+    with open(filepath, 'w') as file:
         file.write("1")
 
-with open(r"D:\projects\mini projects\num-guessr\highscore.txt", 'r') as file:
+with open(filepath, 'r') as file:
     try:
         highscore = file.read().strip()
         if highscore:
@@ -67,7 +69,7 @@ with open(r"D:\projects\mini projects\num-guessr\highscore.txt", 'r') as file:
 print(f"Current highscore : {highscore}")
 if highscore > attempts:
     print(f"You have the new highscore with {attempts} attempts")
-    with open(r"D:\projects\mini projects\num-guessr\highscore.txt", 'w') as file:
+    with open(filepath, 'w') as file:
         file.write(str(attempts))
 else:
     print(f"Your score is {attempts}")
