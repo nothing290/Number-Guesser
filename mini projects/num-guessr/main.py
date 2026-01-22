@@ -30,7 +30,7 @@ while guess != num:
     if guess == -1:
             break
 
-    if attempts > 10:
+    if attempts > 20:
         print(f"Sorry, you took too many attemps. The number was {num}")
         break
 

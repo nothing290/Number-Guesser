@@ -1,0 +1,51 @@
+PROJECT NAME : CLI Account Management System
+
+Aim:
+    -Create a simple CLI user account registration, login, or manage accounts with existing accounts stored in a file.
+
+FEATURES:
+    bootup()
+        load passwords to a variable()
+    setup menu function()
+    registration
+        register new user()
+            check password strentgh()
+        verify password()
+        prevent duplicate usernames()
+        save the account to file()
+    login()
+        allow account username + password to be entered AND verified()
+        check file for the username()
+        check if password matches()
+            track attempts and lock afer 10 failed attempts()
+        store logged in account in a dictionary()
+    change password()
+        enter current password()
+        wnter and verify new password()
+    logout()
+        end program
+
+STORAGE STRUCTURE:
+    format:
+        {
+            "username": {
+                "password" : "string"
+                "attempts" : int
+                "locked" : bool
+            }
+        }
+
+FUNCTIONS:
+    LoadUsers()
+    SaveUsers()
+    RegUser()
+    loginUser()
+    Menu()
+
+NOTES:
+    -Remember to handle errors
+    -Add strength checker
+    -Locked accounts need to be manually reset
+
+PRE-PROGRAMMING WORK:
+    -learn to handle JSON files()
